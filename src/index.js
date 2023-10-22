@@ -1,9 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const redis = require('redis');
 
 const REDIS_HOST = 'redis';
 const REDIS_PORT = '6379';
-const redisClint = redis.createClint({`url :redis://${REDIS_HOST}:${REDIS_PORT}`,});
+const redisClient = redis.createClient({url: `redis://${REDIS_HOST}:${REDIS_PORT}`,});
+
+redisClient.on('error', err => console.log('Redis Client Error', err));
+redisClient.on('connect', () => console.log('connected to redis...'));
+redisClient.connect();
+
 
 const DB_USER = 'root';
 const DB_PASSWORD = 'example';
