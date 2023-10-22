@@ -31,6 +31,9 @@ services:
       - mongo
     depends_on:
       - mongo
+  redis:
+    image: redis
+    
 
 
 volumes:
