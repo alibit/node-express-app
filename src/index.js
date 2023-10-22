@@ -1,6 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const REDIS_HOST = 'redis';
+const REDIS_PORT = '6379';
+const redisClint = redis.createClint({`url :redis://${REDIS_HOST}:${REDIS_PORT}`,});
+
 const DB_USER = 'root';
 const DB_PASSWORD = 'example';
 const DB_PORT = 27017;
