@@ -1,10 +1,14 @@
 version: '3'
 services:
   node-app:
+    image: 002705198600/docker-compose
     ports:
       - 4000:4000
     env_file:
       - ./.env
+    depends_on:
+      - mongo
+      - redis
   mongo:
     image: mongo
     restart: always
@@ -44,4 +48,3 @@ services:
 
 volumes:
   mongo-db:
-  
