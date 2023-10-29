@@ -29,7 +29,7 @@ const app = express();
 app.get('/', (req, res) => { 
     redisClient.set('products',"Laptops,Desktops");
     console.log(`traffic from ${os.hostname}`);
-    res.send('<h1> TresMerge</h1>');
+    res.send('<h1> TresMerge with in watchtower!</h1>');
 });
 app.get('/data', async (req, res) => { 
     const products = await redisClient.get('products');
