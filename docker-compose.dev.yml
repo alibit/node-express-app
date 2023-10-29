@@ -1,7 +1,6 @@
 version: '3'
 services:
   node-app:
-    container_name: express-node-app-container_dev
     build:
       context: . 
       target: development
