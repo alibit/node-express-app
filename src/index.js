@@ -27,7 +27,6 @@ const app = express();
 
 app.get('/', (req, res) => { 
     redisClient.set('products',"Laptops,Desktops");
-    console.log(`respond from ${os.hostname}`);
     res.send('<h1> TresMerge</h1>');
 });
 app.get('/data', async (req, res) => { 
