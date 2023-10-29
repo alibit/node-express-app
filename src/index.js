@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const redis = require('redis');
+const os = require('os');
 
 const REDIS_HOST = 'redis';
 const REDIS_PORT = '6379';
@@ -27,6 +28,7 @@ const app = express();
 
 app.get('/', (req, res) => { 
     redisClient.set('products',"Laptops,Desktops");
+    console.log(`traffic from ${os.hostname}`);
     res.send('<h1> TresMerge</h1>');
 });
 app.get('/data', async (req, res) => { 
