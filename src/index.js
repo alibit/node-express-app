@@ -29,7 +29,7 @@ const app = express();
 app.get('/', (req, res) => { 
     redisClient.set('products',"Laptops,Desktops");
     console.log(`traffic from ${os.hostname}`);
-    res.send('<h1> TresMerge with in watchtower!</h1>');
+    res.send(`<h1> the boss Omar TresMerge with in watchtower! second updated for watchtower by ali nabil Mohammed ali nabil youssef barour and Jory ali nabil youssef barour</h1> <h2>traffic from ${os.hostname}</h2>`);
 });
 app.get('/data', async (req, res) => { 
     const products = await redisClient.get('products');
